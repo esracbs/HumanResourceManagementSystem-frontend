@@ -5,6 +5,7 @@ import EmployerList from '../pages/EmployerList'
 import { Grid, GridRow } from 'semantic-ui-react'
 import CandidateList from '../pages/CandidateList'
 import { Route } from 'react-router'
+import CvDetail from '../pages/CvDetail'
 
 export default function Dashboard() {
     return (
@@ -20,8 +21,9 @@ export default function Dashboard() {
                         <CandidateList/> */}
                         <Route exact path="/" />
                         <Route exact path="/advertisements" component={AdvertisementList}/>
-                        <Route exact path="/candidate" component={CandidateList}/>
-                        <Route exact path="/cart" component={EmployerList} />
+                        <Route exact path="/candidates" component={CandidateList}/>
+                        <Route exact path="/employers" component={EmployerList} />
+                        <Route exact path="/candidates/:id" component={CvDetail}/>
                     </Grid.Column>
                 </GridRow>
             </Grid>

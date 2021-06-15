@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Dropdown ,Icon, Input, Menu } from 'semantic-ui-react'
 
 export default function SideMenu() {
@@ -10,9 +11,9 @@ export default function SideMenu() {
           </Menu.Item>
           <Menu.Item>Menu
             <Menu.Menu>
-              <Menu.Item>İlanlar</Menu.Item>
-              <Menu.Item >İş arayanlar</Menu.Item>
-              <Menu.Item >Şirketler(iş verenler)</Menu.Item>
+              <Menu.Item><Link to='/advertisements'>İlanlar</Link></Menu.Item>
+              <Menu.Item ><Link to='/candidates'>İş arayanlar</Link></Menu.Item>
+              <Menu.Item ><Link to='/employers'>Şirketler(iş verenler)</Link></Menu.Item>
             </Menu.Menu>
           </Menu.Item>
           <Menu.Item name='browse'>
