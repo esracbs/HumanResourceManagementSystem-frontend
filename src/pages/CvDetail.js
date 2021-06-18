@@ -3,6 +3,7 @@ import { Grid,Table } from 'semantic-ui-react'
 import CandidateDetail from '../pages/CandidateDetail'
 import AbilityDetail from '../pages/AbilityDetail'
 import LanguageDetail from '../pages/LanguageDetail'
+import SchoolDetail from '../pages/SchoolDetail'
 
 export default function CvDetail() {
     return (
@@ -14,8 +15,8 @@ export default function CvDetail() {
                         <Table>
                                 <Table.HeaderCell><AbilityDetail /></Table.HeaderCell>
                                 <Table.HeaderCell><LanguageDetail/></Table.HeaderCell>
-                            
                         </Table>
+                        <SchoolDetail/>
                         
                     </Grid.Column>
                 </Grid.Row>

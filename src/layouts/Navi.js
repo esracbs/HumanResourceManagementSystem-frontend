@@ -8,9 +8,8 @@ import SignedOut from './SignedOut'
 export default function Navi() {
     const [isAuthenticated, setIsAuthenticated] = useState(true)
     const history =useHistory()
-    function handleSignOut() {
-        setIsAuthenticated(false) 
-        history.push("/")}
+    function handleSignOut() {setIsAuthenticated(false) 
+         history.push("/")}
     function handleSignIn() {setIsAuthenticated(true)}
     return (
         <div>

@@ -6,6 +6,7 @@ import { Grid, GridRow } from 'semantic-ui-react'
 import CandidateList from '../pages/CandidateList'
 import { Route } from 'react-router'
 import CvDetail from '../pages/CvDetail'
+import RegisterScreen from '../pages/RegisterScreen'
 
 export default function Dashboard() {
     return (
@@ -24,6 +25,7 @@ export default function Dashboard() {
                         <Route exact path="/candidates" component={CandidateList}/>
                         <Route exact path="/employers" component={EmployerList} />
                         <Route exact path="/candidates/:id" component={CvDetail}/>
+                        <Route exact path="/registerScreen" component={RegisterScreen}/>
                     </Grid.Column>
                 </GridRow>
             </Grid>
