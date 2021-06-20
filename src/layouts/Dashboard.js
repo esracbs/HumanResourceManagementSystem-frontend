@@ -7,6 +7,7 @@ import CandidateList from '../pages/CandidateList'
 import { Route } from 'react-router'
 import CvDetail from '../pages/CvDetail'
 import RegisterScreen from '../pages/RegisterScreen'
+import AddAdvertisement from '../pages/AddAdvertisement'
 
 export default function Dashboard() {
     return (
@@ -26,6 +27,7 @@ export default function Dashboard() {
                         <Route exact path="/employers" component={EmployerList} />
                         <Route exact path="/candidates/:id" component={CvDetail}/>
                         <Route exact path="/registerScreen" component={RegisterScreen}/>
+                        <Route exact path="/addAdvertisement" component={AddAdvertisement}/>
                     </Grid.Column>
                 </GridRow>
             </Grid>

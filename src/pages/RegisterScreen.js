@@ -2,7 +2,6 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Form ,Button} from 'semantic-ui-react'
-import { useHistory } from "react-router-dom";
 
 const initialValues={
     firstName:'',
@@ -13,6 +12,7 @@ const initialValues={
     password:'',
     rePassword:'',
 }
+
 const onSubmit=values=>{
     console.log('Form data',values)
 }
@@ -36,7 +36,6 @@ export default function RegisterScreen() {
           validationSchema 
     });
     
-    console.log('Visited fields',formik.touched)
     return(
         <div>
             <Form onSubmit={formik.handleSubmit}>
