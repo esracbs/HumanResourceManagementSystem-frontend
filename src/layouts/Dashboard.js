@@ -8,6 +8,8 @@ import { Route } from 'react-router'
 import CvDetail from '../pages/CvDetail'
 import RegisterScreen from '../pages/RegisterScreen'
 import AddAdvertisement from '../pages/AddAdvertisement'
+import AdvertsToBeConfirmed from '../pages/AdvertsToBeConfirmed'
+import ConfirmPage from '../pages/ConfirmPage'
 
 export default function Dashboard() {
     return (
@@ -18,8 +20,7 @@ export default function Dashboard() {
                         <SideMenu/>
                     </Grid.Column>
                     <Grid.Column width={13}>
-                        {/* <AdvertisementList/> 
-                        <EmployerList/>
+                        {/* <EmployerList/>
                         <CandidateList/> */}
                         <Route exact path="/" />
                         <Route exact path="/advertisements" component={AdvertisementList}/>
@@ -28,6 +29,8 @@ export default function Dashboard() {
                         <Route exact path="/candidates/:id" component={CvDetail}/>
                         <Route exact path="/registerScreen" component={RegisterScreen}/>
                         <Route exact path="/addAdvertisement" component={AddAdvertisement}/>
+                        <Route exact path="/advertsToBeConfirmed" component={AdvertsToBeConfirmed}/>
+                        <Route exact path="/ConfirmPage/:id" component={ConfirmPage}/>
                     </Grid.Column>
                 </GridRow>
             </Grid>

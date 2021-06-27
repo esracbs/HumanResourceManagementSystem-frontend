@@ -15,6 +15,7 @@ export default function SideMenu() {
               <Menu.Item ><Link to='/candidates'>İş arayanlar</Link></Menu.Item>
               <Menu.Item ><Link to='/employers'>Şirketler(iş verenler)</Link></Menu.Item>
               <Menu.Item ><Link to='/addAdvertisement'>İlan Ekle</Link></Menu.Item>
+              <Menu.Item ><Link to='/advertsToBeConfirmed'>Onaylanacak İlanlar</Link></Menu.Item>
             </Menu.Menu>
           </Menu.Item>
           <Menu.Item name='browse'>

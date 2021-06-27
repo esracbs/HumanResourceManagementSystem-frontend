@@ -1,13 +1,16 @@
 import React ,{ useState ,useEffect} from 'react'
-import { Table } from 'semantic-ui-react'
+import { Table ,Button} from 'semantic-ui-react'
 import AdvertisementService from '../services/AdvertisementService'
+import { NavLink } from 'react-router-dom';
 
-export default function AdvertisementList() {
+
+export default function AdvertsToBeConfirmed() {
   const [advertisements, setAdvertisements] = useState([])
     useEffect(()=>{
         let advertisementService = new AdvertisementService()
-        advertisementService.getByIsConfirmed().then(result=>setAdvertisements(result.data.data),[])
+        advertisementService.getNotConfirmedAdvertisements().then(result=>setAdvertisements(result.data.data),[])
     })
+    
     return (
       <div>
         <Table striped>
@@ -19,6 +22,7 @@ export default function AdvertisementList() {
             <Table.HeaderCell>Şehir</Table.HeaderCell>
             <Table.HeaderCell>Maaş Aralığı</Table.HeaderCell>
             <Table.HeaderCell>İlan eklenme tarihi</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
             
           </Table.Row>
         </Table.Header>
@@ -32,6 +36,8 @@ export default function AdvertisementList() {
                 <Table.Cell>{advert.city.cityName}</Table.Cell>
                 <Table.Cell>Min:{advert.minSalary}<br/>Maks:{advert.maxSalary}</Table.Cell>
                 <Table.Cell>{advert.createdDate}</Table.Cell>
+                <Table.Cell><Button primary content="İşlemler" type="submit" as={NavLink} to={`/confirmPage/${advert.id}`}/></Table.Cell>          
+                
             </Table.Row>
         ))}
         </Table.Body>
