@@ -1,35 +1,36 @@
 import React ,{ useState ,useEffect} from 'react'
 import { Table } from 'semantic-ui-react'
 import { useParams } from 'react-router'
-import SchoolService from '../services/SchoolService'
+import SocialMediaService from '../services/SocialMediaService'
 
 export default function LanguageDetail() {
     let { id } = useParams();
-  const [schools, setSchool] = useState([])
+  const [socialMedias, setSocialMedia] = useState([])
     useEffect(()=>{
-        let schoolService = new SchoolService()
-        schoolService.getSchoolByCandidateId(id).then(
-            result=>setSchool(result.data.data),[])
+        let socialMediaService = new SocialMediaService()
+        socialMediaService.getSocialMediaByCandidateId(id).then(
+            result=>setSocialMedia(result.data.data),[])
         })
     return (
-        <div >
-            <Table >
+        <div ><label> </label>
+            <Table celled>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Okuduğu Okullar</Table.HeaderCell>
-                        <Table.HeaderCell>Okuduğu Bölüm</Table.HeaderCell>
+                        <Table.HeaderCell>Sosyal Medya</Table.HeaderCell>
+                        <Table.HeaderCell>Link</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
-
                 <Table.Body>
-                {schools.map((school) => (
-                    <Table.Row key={school.id}>
-                        <Table.Cell >{school.schoolDepartment.school.schoolName}</Table.Cell>
-                        <Table.Cell >{school.schoolDepartment.department.departmentName}</Table.Cell>
+                {socialMedias.map((socialMedia) => (
+                    <Table.Row key={socialMedia.id}>
+                        <Table.Cell >{socialMedia.linkType.linkType}</Table.Cell>
+                        <Table.Cell >{socialMedia.link}</Table.Cell>
                     </Table.Row>
-                ))} 
+                ))}   
                 </Table.Body>
             </Table>
         </div>
+        //
+                   
     )
 }

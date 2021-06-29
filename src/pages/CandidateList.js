@@ -1,6 +1,6 @@
 import React ,{ useState ,useEffect} from 'react'
-import { Table } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Table ,Button} from 'semantic-ui-react'
+import { Link, NavLink } from 'react-router-dom'
 import CandidateService from '../services/CandidateService'
 
 export default function CandidateList() {
@@ -18,6 +18,7 @@ export default function CandidateList() {
             <Table.HeaderCell>Email</Table.HeaderCell>
             <Table.HeaderCell>TC Kimlik Numarası</Table.HeaderCell>
             <Table.HeaderCell>Doğum Tarihi</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -28,7 +29,8 @@ export default function CandidateList() {
                 <Table.Cell>{candidate.email}</Table.Cell>
                 <Table.Cell>{candidate.identificationNumber}</Table.Cell>
                 <Table.Cell>{candidate.birthDate}</Table.Cell>
-            </Table.Row>
+                <Table.Cell><Button primary content="Cv'yi Güncelle" type="submit" as={NavLink} to={`/editPage/${candidate.id}`}/></Table.Cell>
+                </Table.Row>
         ))}
         </Table.Body>
       </Table>

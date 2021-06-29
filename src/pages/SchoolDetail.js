@@ -3,7 +3,7 @@ import { Table } from 'semantic-ui-react'
 import { useParams } from 'react-router'
 import SchoolService from '../services/SchoolService'
 
-export default function LanguageDetail() {
+export default function SchoolDetail() {
     let { id } = useParams();
   const [schools, setSchool] = useState([])
     useEffect(()=>{

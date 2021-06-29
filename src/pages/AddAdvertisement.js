@@ -109,7 +109,8 @@ export default function AddAdvertisement() {
         <Form onSubmit={formik.handleSubmit}>
             <Form.Field style={{marginBottom: "1rem"}}>
               <label>İş Pozisyonu</label>
-            <Dropdown clearable item placeholder="İş pozisyonu" search selection
+            <Dropdown 
+            clearable item placeholder="İş pozisyonu" search selection
               id="jobTitleId"
               value={formik.values.jobTitleId}
               onChange={(event, data) =>
@@ -171,13 +172,13 @@ export default function AddAdvertisement() {
                       
                       value={formik.values.workScheduleId}
                       onChange={(event, data) =>
-                        handleChangeSemantic(data.value, "workTimeId")
+                        handleChangeSemantic(data.value, "workHourId")
                       }
                       
                       options={workScheduleOption}
                     />
-                    {formik.errors.workTimeId && formik.touched.workTimeId && (
-                      <div className={"ui pointing red basic label"}>{formik.errors.workTimeId}</div>
+                    {formik.errors.workHourId && formik.touched.workHourId && (
+                      <div className={"ui pointing red basic label"}>{formik.errors.workHourId}</div>
                     )}
                   </Form.Field>
                   <Form.Field>

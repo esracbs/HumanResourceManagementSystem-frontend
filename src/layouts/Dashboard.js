@@ -10,6 +10,8 @@ import RegisterScreen from '../pages/RegisterScreen'
 import AddAdvertisement from '../pages/AddAdvertisement'
 import AdvertsToBeConfirmed from '../pages/AdvertsToBeConfirmed'
 import ConfirmPage from '../pages/ConfirmPage'
+import WorkplaceCandidate from '../pages/WorkplaceCandidate'
+import EditPage from '../pages/EditPage'
 
 export default function Dashboard() {
     return (
@@ -20,8 +22,6 @@ export default function Dashboard() {
                         <SideMenu/>
                     </Grid.Column>
                     <Grid.Column width={13}>
-                        {/* <EmployerList/>
-                        <CandidateList/> */}
                         <Route exact path="/" />
                         <Route exact path="/advertisements" component={AdvertisementList}/>
                         <Route exact path="/candidates" component={CandidateList}/>
@@ -31,7 +31,10 @@ export default function Dashboard() {
                         <Route exact path="/addAdvertisement" component={AddAdvertisement}/>
                         <Route exact path="/advertsToBeConfirmed" component={AdvertsToBeConfirmed}/>
                         <Route exact path="/ConfirmPage/:id" component={ConfirmPage}/>
+                        <Route exact path="/workplaces" component={WorkplaceCandidate}/>
+                        <Route exact path="/editPage/:id" component={EditPage}/>
                     </Grid.Column>
+                    
                 </GridRow>
             </Grid>
         </div>
