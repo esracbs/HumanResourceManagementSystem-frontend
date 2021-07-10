@@ -29,7 +29,6 @@ export default function CandidateList() {
                 <Table.Cell>{candidate.email}</Table.Cell>
                 <Table.Cell>{candidate.identificationNumber}</Table.Cell>
                 <Table.Cell>{candidate.birthDate}</Table.Cell>
-                <Table.Cell><Button primary content="Cv'yi Güncelle" type="submit" as={NavLink} to={`/editPage/${candidate.id}`}/></Table.Cell>
                 </Table.Row>
         ))}
         </Table.Body>

@@ -19,6 +19,9 @@ export default class AdvertisementService {
     getByIsConfirmed(){
         return axios.get("http://localhost:8080/api/jobAdvertisements/getByIsConfirm");
     }
+    getPageableAndFilterJobPostings(pageNo, pageSize, filterOption){
+        return axios.post(`http://localhost:8080/api/jobAdvertisements/getByActiveAndFilter?pageNo=1&pageSize=${pageNo}&pageSize=${pageSize}`,filterOption)
+    }
     
 }
 

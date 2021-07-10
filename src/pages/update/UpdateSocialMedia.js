@@ -1,8 +1,7 @@
  import React, { useEffect, useState } from "react";
  import { useFormik } from "formik";
- import { Dropdown,Form , Button} from 'semantic-ui-react'
-import SocialMediaService from "../services/SocialMediaService";
-// import JobTitleService from "../services/JobTitleService";
+ import { Dropdown,Form ,TextArea,  Button} from 'semantic-ui-react'
+import SocialMediaService from "../../services/SocialMediaService";
 
  const initialValues= {
      link: "",
@@ -22,11 +21,11 @@ import SocialMediaService from "../services/SocialMediaService";
                  },
                  link: values.link,
                  candidate: {
-                     id: 4,
+                     id: 2,
                  },
              };
-             socialMediaService.update(newSocialMedia, props.id).then((result) => console.log(newSocialMedia));
-             alert("İlan eklendi onaylandıktan sonra listelenecektir");
+             socialMediaService.update(props.id, newSocialMedia).then((result) => console.log(newSocialMedia));
+             alert("İlan eklendi onaylandıktan sonra ");
          },
      });
      const handleChangeSemantic = (value, fieldName) => {
@@ -61,17 +60,21 @@ import SocialMediaService from "../services/SocialMediaService";
                     </div>
                    )}
                  </Form.Field>
-              <Form.Field style={{marginBottom: "1rem"}}>
-            <label>Link URL</label>
-            <Form.Input
-                type="text"
-                placeholder="Link"
-                id="link"
-                name="link"
-                value={formik.values.link}
-                onChange={formik.handleChange}
-            />
-            </Form.Field>
+            <Form.Field>
+                  <label>Açıklama</label>
+                    <TextArea
+                      placeholder="Link URL"
+                      value={formik.values.link}
+                      name="link"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.link && formik.touched.link && (
+                      <div className={"ui pointing red basic label"}>
+                        {formik.errors.link}
+                      </div>
+                    )}
+                  </Form.Field>
 
             <Button
                     content="Güncelle"

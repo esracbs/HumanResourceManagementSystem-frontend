@@ -1,7 +1,7 @@
 import React ,{ useState ,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { Button, Card } from 'semantic-ui-react'
-import AdvertisementService from '../services/AdvertisementService'
+import AdvertisementService from '../../services/AdvertisementService'
 
 export default function ConfirmPage() {
     const [advertisements, setAdvertisements] = useState([])

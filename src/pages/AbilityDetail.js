@@ -2,6 +2,7 @@ import React ,{ useState ,useEffect} from 'react'
 import {Table } from 'semantic-ui-react'
 import { useParams } from 'react-router'
 import AbilityService from '../services/AbilityService'
+import UpdateAbility from './update/UpdateAbility';
 
 export default function AbilityDetail() {
     let { id } = useParams();
@@ -13,11 +14,11 @@ export default function AbilityDetail() {
         })
     return (
         <div >
-            <Table className="tb" >
+            <Table className="tb" celled>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Kullandığı Teknolojiler</Table.HeaderCell>
-                        
+                        <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -25,6 +26,7 @@ export default function AbilityDetail() {
                 {abilities.map((ability) => (
                     <Table.Row key={ability.id}>
                         <Table.Cell textAlign='center'>{ability.ability.abilityName}</Table.Cell>
+                        <Table.Cell textAlign='center'><UpdateAbility id={ability.id}/></Table.Cell>
                     </Table.Row>
                 ))} 
                 </Table.Body>

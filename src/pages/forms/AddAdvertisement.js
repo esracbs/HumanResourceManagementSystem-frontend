@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Dropdown,Form ,Button, Input, TextArea,  Grid } from 'semantic-ui-react'
-import AdvertisementService from "../services/AdvertisementService";
-import WorkTypeService from "../services/WorkTypeService";
-import CityService from "../services/CityService";
-import JobTitleService from "../services/JobTitleService";
-import WorkScheduleService from "../services/WorkScheduleService";
+import AdvertisementService from "../../services/AdvertisementService";
+import WorkTypeService from "../../services/WorkTypeService";
+import CityService from "../../services/CityService";
+import JobTitleService from "../../services/JobTitleService";
+import WorkScheduleService from "../../services/WorkScheduleService";
 
 
 const initialValues={
@@ -48,7 +48,7 @@ export default function AddAdvertisement() {
               id:values.cityId
             },
             employer:{
-              id:6
+              id:1
             },
             jobtitle:{
               id:values.jobTitleId

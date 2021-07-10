@@ -2,8 +2,9 @@ import React ,{ useState ,useEffect} from 'react'
 import { Table } from 'semantic-ui-react'
 import { useParams } from 'react-router'
 import SocialMediaService from '../services/SocialMediaService'
+import UpdateSocialMedia from './update/UpdateSocialMedia';
 
-export default function LanguageDetail() {
+export default function SocialMediaDetail() {
     let { id } = useParams();
   const [socialMedias, setSocialMedia] = useState([])
     useEffect(()=>{
@@ -18,6 +19,7 @@ export default function LanguageDetail() {
                     <Table.Row>
                         <Table.HeaderCell>Sosyal Medya</Table.HeaderCell>
                         <Table.HeaderCell>Link</Table.HeaderCell>
+                        <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -25,12 +27,12 @@ export default function LanguageDetail() {
                     <Table.Row key={socialMedia.id}>
                         <Table.Cell >{socialMedia.linkType.linkType}</Table.Cell>
                         <Table.Cell >{socialMedia.link}</Table.Cell>
+                        <Table.Cell><UpdateSocialMedia id={socialMedia.id}/></Table.Cell>
                     </Table.Row>
                 ))}   
                 </Table.Body>
             </Table>
         </div>
-        //
                    
     )
 }

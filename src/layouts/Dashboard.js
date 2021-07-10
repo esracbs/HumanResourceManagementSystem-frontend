@@ -7,15 +7,16 @@ import CandidateList from '../pages/CandidateList'
 import { Route } from 'react-router'
 import CvDetail from '../pages/CvDetail'
 import RegisterScreen from '../pages/RegisterScreen'
-import AddAdvertisement from '../pages/AddAdvertisement'
+import AddAdvertisement from '../pages/forms/AddAdvertisement'
 import AdvertsToBeConfirmed from '../pages/AdvertsToBeConfirmed'
-import ConfirmPage from '../pages/ConfirmPage'
+import ConfirmPage from '../pages/forms/ConfirmPage'
 import WorkplaceCandidate from '../pages/WorkplaceCandidate'
-import EditPage from '../pages/EditPage'
+import { ToastContainer } from "react-toastify";
 
 export default function Dashboard() {
     return (
         <div>
+            <ToastContainer position="bottom-right"/>
             <Grid>
                 <GridRow>
                     <Grid.Column width={3}>
@@ -32,7 +33,6 @@ export default function Dashboard() {
                         <Route exact path="/advertsToBeConfirmed" component={AdvertsToBeConfirmed}/>
                         <Route exact path="/ConfirmPage/:id" component={ConfirmPage}/>
                         <Route exact path="/workplaces" component={WorkplaceCandidate}/>
-                        <Route exact path="/editPage/:id" component={EditPage}/>
                     </Grid.Column>
                     
                 </GridRow>

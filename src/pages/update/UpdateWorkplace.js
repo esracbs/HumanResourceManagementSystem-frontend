@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { Dropdown,Form , Button} from 'semantic-ui-react'
-import WorkplaceCandidateService from "../services/WorkplaceCandidateService";
-import WorkplaceService from "../services/WorkplaceService";
-import JobTitleService from "../services/JobTitleService";
+import WorkplaceCandidateService from "../../services/WorkplaceCandidateService";
+import WorkplaceService from "../../services/WorkplaceService";
+import JobTitleService from "../../services/JobTitleService";
 
 const initialValues= {
     dateOfEntry: "",
