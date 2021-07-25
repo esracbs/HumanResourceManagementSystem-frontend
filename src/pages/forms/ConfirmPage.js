@@ -10,30 +10,18 @@ export default function ConfirmPage() {
     useEffect(()=>{
         jobAdvertisementService.getById(id).then(result=>setAdvertisements(result.data.data),[])
     })
-    function confirm(id) {
-        jobAdvertisementService.confirmed(id)
-        
+    function confirm(value) {
+        jobAdvertisementService.confirmed(value)
     }
-    
     return (
     <div>
       <Card >
         <Card.Content>
-          
           <Card.Description>
-              {advertisements.id}
+              İlan Onaylanmıştır Anasayfaya Dönebilirsiniz
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button basic color='green' onClick={confirm(advertisements.id) }  >
-            Onayla 
-            </Button>
-            <Button basic color='red'>
-              Decline
-            </Button>
-          </div>
-        </Card.Content>
+            {confirm(advertisements.id) }
       </Card>
     </div>
     )

@@ -9,8 +9,7 @@ export default function FavAdvertisements() {
             <Dropdown item text="Favori İlanlar">
             <Dropdown.Menu>
                 {favAdvItems.map((favItem)=>(
-                    <Dropdown.Item  >{favItem.advertisement.description}
-                    <Label>{favItem.quantity}</Label></Dropdown.Item>
+                    <Dropdown.Item  >{favItem.advertisement.description}</Dropdown.Item>
                  ))}
             <Dropdown.Divider/>
             

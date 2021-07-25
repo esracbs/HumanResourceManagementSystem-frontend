@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown ,Icon, Input, Menu, MenuItem } from 'semantic-ui-react'
+import { Dropdown ,Icon, Input, Menu} from 'semantic-ui-react'
 
 export default function SideMenu() {
  
@@ -15,7 +15,7 @@ export default function SideMenu() {
               <Menu.Item ><Link to='/employers'>Şirketler(iş verenler)</Link></Menu.Item>
               <Menu.Item ><Link to='/addAdvertisement'>İlan Ekle</Link></Menu.Item>
               <Menu.Item ><Link to='/advertsToBeConfirmed'>Onaylanacak İlanlar</Link></Menu.Item>
-            
+              <Menu.Item ><Link to='/employerUpdatesToBeConfirmed'>Onaylanacak İşveren Güncellemeleri</Link></Menu.Item>
           
           <Menu.Item name='browse'>
             <Icon name='grid layout' />

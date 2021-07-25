@@ -36,7 +36,7 @@ export default function AdvertsToBeConfirmed() {
                 <Table.Cell>{advert.city.cityName}</Table.Cell>
                 <Table.Cell>Min:{advert.minSalary}<br/>Maks:{advert.maxSalary}</Table.Cell>
                 <Table.Cell>{advert.createdDate}</Table.Cell>
-                <Table.Cell><Button primary content="İşlemler" type="submit" as={NavLink} to={`/confirmPage/${advert.id}`}/></Table.Cell>          
+                <Table.Cell><Button color="green" content="Onayla" type="submit" as={NavLink} to={`/confirmPage/${advert.id}`}/></Table.Cell>          
                 
             </Table.Row>
         ))}

@@ -72,7 +72,7 @@ export default function AdvertisementList() {
                 <Table.Cell>{advert.city.cityName}</Table.Cell>
                 <Table.Cell>Min:{advert.minSalary}<br/>Maks:{advert.maxSalary}</Table.Cell>
                 <Table.Cell>{advert.createdDate}</Table.Cell>
-                <Table.Cell><Button onClick={()=>handleAddToFavList(advert)}>Favorilere Ekle</Button></Table.Cell>
+                <Table.Cell><Button circular  icon='heart' color='red' onClick={()=>handleAddToFavList(advert)}>Favorilere Ekle</Button></Table.Cell>
             </Table.Row>
         ))}
         </Table.Body>

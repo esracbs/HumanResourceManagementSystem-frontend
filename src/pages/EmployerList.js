@@ -1,6 +1,8 @@
 import React ,{ useState ,useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import { Table } from 'semantic-ui-react'
 import EmployerService from '../services/EmployerService'
+import UpdateEmployer from './update/UpdateEmployer'
 
 export default function EmployerList() {
   const [employers, setEmployers] = useState([])
@@ -10,6 +12,7 @@ export default function EmployerList() {
     })
     return (
       <div>
+        <UpdateEmployer/>
         <Table striped>
         <Table.Header>
           <Table.Row>
@@ -22,7 +25,7 @@ export default function EmployerList() {
         <Table.Body>
         {employers.map((employer)=>(
             <Table.Row >
-                <Table.Cell>{employer.companyName}</Table.Cell>
+                <Table.Cell><Link to={`/employers/${employer.id}`}>{employer.companyName}</Link></Table.Cell>
                 <Table.Cell>{employer.webAdress}</Table.Cell>
                 <Table.Cell>{employer.phoneNumber}</Table.Cell>
             </Table.Row>
@@ -31,5 +34,4 @@ export default function EmployerList() {
       </Table>
   </div>
         
-    )
-}
+)}
